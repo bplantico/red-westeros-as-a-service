@@ -1,10 +1,8 @@
 <!-- app/views/westeros_search/index.html.erb -->
 
-<h1>Members of <%= "#{@search_term}" %></h1>
+<h1> <%= @house[:name] %> has <%= @members.count %> members</h1>
 
-<h2><%= @house.members.count %></h2>
-
-<% @house.members.each do |member| %>
+<% @members.each do |member| %>
   <ul class='members'>
    <li>Member name: <%= member.name %></li>
    <li>Member ID: <%= member.id %></li>

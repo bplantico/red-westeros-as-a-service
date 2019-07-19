@@ -11,7 +11,7 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq('/search')
 
-      expect(page).to have_content('7 Members')
+      expect(page).to have_content('Greyjoy has 7 members')
 
       expect(page).to have_content('Member name: Balon Greyjoy')
       expect(page).to have_content('Member ID: 38')
