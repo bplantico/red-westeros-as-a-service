@@ -4,7 +4,7 @@ class WesterosSearchController < ApplicationController
     @search_term = params[:q]
 
     @conn = Faraday.new(url: "http://westerosapi.herokuapp.com") do |faraday|
-		  faraday.params['api_key'] = 'egg'
+	    faraday.params['api_key'] = ENV['WESTEROS_API_KEY']
 		  faraday.params['house'] = params['q']
 		  faraday.adapter Faraday.default_adapter
 		end
