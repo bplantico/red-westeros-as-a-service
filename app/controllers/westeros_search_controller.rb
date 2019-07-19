@@ -1,9 +1,26 @@
 class WesterosSearchController < ApplicationController
 
   def index
+
+    def houses
+      if params[:q] == 'stark'
+        1
+      elsif params[:q] == 'lannister'
+        2
+      elsif params[:q] == 'targaryen'
+        3
+      elsif params[:q] == 'tyrell'
+        4
+      elsif params[:q] == 'greyjoy'
+        5
+      else
+        {}
+      end
+    end
+
     @search_term = params[:q]
 
-    @conn = Faraday.new(url: "http://westerosapi.herokuapp.com") do |faraday|
+    @conn = Faraday.new(url: "https://westeros-as-a-service.herokuapp.com") do |faraday|
 		  faraday.params['api_key'] = 'egg'
 		  faraday.params['house'] = params['q']
 		  faraday.adapter Faraday.default_adapter
